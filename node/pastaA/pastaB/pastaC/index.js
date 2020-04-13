@@ -1,0 +1,1 @@
+exports.ola2 = console.log('Relou')
