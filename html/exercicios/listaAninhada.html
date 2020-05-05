@@ -1,0 +1,46 @@
+<h1>Projeto</h1>
+<ul class='tree'>
+    <li>
+        <span onclick="sanfona('back_hidable')">backend</span>
+        <ul id='back_hidable'>
+            <li>
+                <span onclick="sanfona('app_hidable')">app</span>
+                <ul id='app_hidable'>
+                    <li>produto.js</li>
+                    <li>usuario.js</li>
+                    <li>venda.js</li>
+                </ul>
+            </li>
+            <li>
+                <span onclick="sanfona('config_hidable')">config</span>
+                <ul id='config_hidable'>
+                    <li>banco.js</li>
+                    <li>rotas.js</li>
+                    <li>servidor.js</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <span onclick="sanfona('fron_hidable')">frontend</span>
+        <ul id='fron_hidable'>
+            <li>
+                <span onclick="sanfona('public_hidable')">public</span>
+                <ul id='public_hidable'>
+                    <li>app.css</li>
+                    <li>app.js</li>
+                    <li>index.html</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+<script>
+    function sanfona(id) {
+        const escondido = document.getElementById(id)
+        const display = escondido.style.display
+        escondido.style.display = display === 'none' ? 'block' : 'none'
+    }
+</script>
