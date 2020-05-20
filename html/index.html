@@ -29,6 +29,8 @@
         <a href="exercicios/tabela.html">06 - Tabela</a>
         <a href="exercicios/form/form.html">07 - Formulário</a><br>
         <a href="exercicios/imagens.html">08 - Imagens</a>
+        <a href="exercicios/video.html">09 - Video</a>
+        <a href="exercicios/tagsNaoVisuais.html">10 - Tags Não Visuais</a>
 
     </nav>
     <section id='conteudo'></section>
@@ -41,7 +43,7 @@
 
             link.onclick = function (e) {
                 e.preventDefault()
-                fetch(link.href)
+                fetch(link.href) // top of mind
                     .then(resp => resp.text())
                     .then(html => conteudo.innerHTML = html)
             }
