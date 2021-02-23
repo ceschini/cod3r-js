@@ -1,3 +1,5 @@
+<!-- VER VIDEO RESUMAO EM CASO DE DUVIDAS -->
+
 <!DOCTYPE html>
 <html>
 
@@ -6,7 +8,27 @@
     <title>Flexbox #03</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        .flex-container {
+            display: flex;
+        }
+
+        .flex-container div {
+            /* tamanho dos flex-items no main axis */
+            /* pode significar altura ou largura */
+            flex-basis: 100px;
+            /* flex-basis eh mais forte */
+            width: 200px;
+        }
+
+        .flex-container div:nth-child(4) {
+            /* flex: grow shrink basis; */
+            flex: 3 6 100px;
+        }
+
+        .flex-container {
+            width: 300px;
+            width: 600px;
+        }
     </style>
 </head>
 

@@ -1,3 +1,5 @@
+<!-- VER VIDEO RESUMAO EM CASO DE DUVIDAS -->
+
 <!DOCTYPE html>
 <html>
 
@@ -6,7 +8,62 @@
     <title>Flexbox #01</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        .big {
+            font-size: 1.5em;
+        }
+
+        .flex-container {
+            display: flex;
+            /* torna main axys = column */
+            flex-direction: column;
+            /* reverte a ordem dos elementos */
+            flex-direction: column-reverse;
+            /* alem de reverter joga pra direita */
+            flex-direction: row-reverse;
+            /* main axys padrao eh row */
+            flex-direction: row;
+            /* flex items extrapolam limites do pai */
+            width: 50%;
+            /* flex-wrap impede isso */
+            flex-wrap: wrap;
+            /* reverte as linhas */
+            flex-wrap: wrap-reverse;
+            height: 200px;
+            /* flow une as duas opcoes acima */
+            /* direction + wrap */
+            flex-flow: row wrap;
+            flex-flow: column-reverse wrap;
+            flex-flow: row wrap;
+
+            /* espacamento */
+
+            /* main axis */
+            /* main start */
+            justify-content: flex-start;
+            /* main end */
+            justify-content: flex-end;
+            justify-content: center;
+            justify-content: space-around;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+
+            /* cross axis */
+            height: 400px;
+            /* padrao */
+            align-items: stretch;
+            /* pela linha de base das fontes */
+            align-items: baseline;
+            align-items: flex-start;
+            align-items: flex-end;
+            align-items: center;
+
+            /* mais de uma linha */
+            align-content: flex-start;
+            align-content: flex-end;
+            align-content: center;
+            align-content: space-around;
+            align-content: space-between;
+        }
     </style>
 </head>
 

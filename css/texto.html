@@ -16,6 +16,65 @@
             flex-direction: column;
             align-items: center;
         }
+
+        p {
+            /* valores padroes */
+            font-size: 1em;
+            font-size: 100%;
+            font-size: 16px;
+            font-size: 12pt;
+
+            /* unidades absolutas */
+            /* tamanho do pixel eh relativo */
+            font-size: 100px;
+            /* pontos */
+            font-size: 72pt;
+            /* polegada */
+            font-size: 1in;
+
+            /* unidades relativas */
+            /* 2.2 vezes tam font pai */
+            font-size: 2.2em;
+            /* 2.2 vezes tam font raiz (html) */
+            font-size: 2.2rem;
+            font-size: 50vh;
+            font-size: 10vw;
+
+            /* todas letras ocupam mesmo espaco */
+            font-family: monospace;
+            /* procura georgia se nao pega padrao serif */
+            font-family: Georgia, serif;
+            font-family: Verdana, sans-serif;
+            font-family: cursive;
+
+            /* grossura fonte */
+            font-weight: 100;
+            font-style: italic;
+            text-transform: uppercase;
+            /* text-decoration: overline underline line-through; */
+            word-spacing: 10px;
+            letter-spacing: 20px;
+            line-height: 2.5em;
+            text-align: center;
+        }
+
+        .botao {
+            font-size: 28px;
+            text-decoration: none;
+            padding: 10px 30px;
+            border-radius: 25px;
+        }
+
+        .destaque {
+            color: #fff;
+            background: tomato;
+            box-shadow: 2px 2px 1px 1px #000;
+        }
+
+        /* quando tiver pressionando */
+        .destaque:active {
+            box-shadow: none;
+        }
     </style>
 </head>
 

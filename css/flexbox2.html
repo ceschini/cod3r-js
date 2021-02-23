@@ -1,3 +1,5 @@
+<!-- VER VIDEO RESUMAO EM CASO DE DUVIDAS -->
+
 <!DOCTYPE html>
 <html>
 
@@ -6,7 +8,54 @@
     <title>Flexbox #02</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        .flex-container {
+            display: flex;
+            height: 300px;
+            width: 600px;
+        }
+
+        .flex-container div:nth-child(3) {
+            background-color: indianred;
+            /* ordem maior vao sendo exibidos por ultimo */
+            /* padrao ordem = 0 */
+            order: 1;
+            order: 0;
+            order: -1;
+            /* alinha o proprio elemento */
+            align-self: center;
+            align-self: flex-end;
+            align-self: flex-start;
+            /* padrao stretch */
+            align-self: stretch;
+        }
+
+        .flex-container div {
+            width: 100px;
+            /* grow distribui espacos no container */
+            /* tambem preenche espacos vazios */
+            /* os items tem pesos  */
+            /* o total do peso eh dividido pelo espaco vazio */
+            /* o resultado é adicionado no tamanho de cada item */
+
+
+            flex-grow: 0;
+            flex-grow: 1;
+        }
+
+        .flex-container div:nth-child(1) {
+            flex-grow: 2;
+        }
+
+        .flex-container {
+            width: 300px;
+
+            /* contrario do grow */
+            flex-shrink: 1;
+        }
+
+        .flex-container div:nth-child(1) {
+            flex-shrink: 5;
+        }
     </style>
 </head>
 

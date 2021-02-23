@@ -5,7 +5,76 @@
     <meta charset="UTF-8">
     <title>Position</title>
     <style>
-        /* ... */
+        div {
+            font-size: 60px;
+            padding: 30px;
+            border: solid 5px #222;
+            /* color: #fff; */
+        }
+
+        .static {
+            /* nao considera top, left */
+            top: 100px;
+            left: 100px;
+            background-color: steelblue;
+        }
+
+        .fixed {
+            /* mesmo rolando a pagina fica fixo na sua posicao */
+            position: fixed;
+            /* 30px do bottom */
+            bottom: 30px;
+            /* colado na direita */
+            right: 0px;
+            background-color: tomato;
+        }
+
+        .relative1 {
+            /* relativo ao elem anterior */
+            position: relative;
+            /* 50 na esquerda do elemento anterior */
+            left: 50px;
+            /* 5 do topo do elem anterior */
+            top: 5px;
+            background-color: seagreen;
+        }
+
+        .absolute1 {
+            /* nao leva consideracao outros elementos */
+            position: absolute;
+            left: 350px;
+            top: 120px;
+            background-color: violet;
+        }
+
+        .relative2 {
+            position: relative;
+            left: 250px;
+            top: 2000px;
+            width: 200px;
+            height: 200px;
+            background-color: slategray;
+        }
+
+        .absolute2 {
+            /* absoluto a partir do elemento pai RELATIVO */
+            /* comentar relativo acima pra ver */
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 20px;
+            height: 20px;
+            background-color: orange;
+        }
+
+        .sticky {
+            /* ao chegar no top 0, fica la mesmo rolando pag */
+            position: sticky;
+            top: 0px;
+            /* safari */
+            position: -webkit-sticky;
+            background-color: #777;
+        }
     </style>
 </head>
 
