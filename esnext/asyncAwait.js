@@ -1,4 +1,4 @@
-// com promise..
+// com promise...
 const http = require('http')
 
 const getTurma = letra => {
@@ -6,7 +6,6 @@ const getTurma = letra => {
     return new Promise((resolve, reject) => {
         http.get(url, res => {
             let resultado = ''
-
             res.on('data', dados => {
                 resultado += dados
             })
@@ -22,16 +21,9 @@ const getTurma = letra => {
     })
 }
 
-Promise.all([getTurma('A'), getTurma('B'), getTurma('C')])
-    .then(turmas => [].concat(...turmas))
-    .then(alunos => alunos.map(aluno => aluno.nome))
-    .then(nomes => console.log(nomes))
-    .catch(e => console.log(e.message))
-
-getTurma('D').catch(e => console.log(e.message))
-
 // Recurso do ES8
 // Objetivo de simplificar o uso de promises...
+// Espera o retorno da promise
 let obterAlunos = async () => {
     const ta = await getTurma('A')
     const tb = await getTurma('B')

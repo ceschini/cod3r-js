@@ -1,16 +1,22 @@
 // let e const
 {
-    var a = 2 // escopo global
-    let b = 3 // escopo de bloco
-    console.log(b)
+    var a = 2
+    let b = 3
+    // let soh existe aqui, pq tem escopo de bloco
+    console.log(b);
 }
-console.log(a)
+
+console.log(a);
 
 // Template String
 const produto = 'iPad'
-console.log(`${produto} é caro!`)
+console.log(`${produto} 
+é 
+caro
+dms`);
 
 // Destructuring
+// ... = rest
 const [l, e, ...tras] = "Cod3r"
 console.log(l, e, tras);
 

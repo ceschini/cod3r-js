@@ -1,8 +1,6 @@
-// no objeto chave = string
-// no Map qualquer coisa
 const tecnologias = new Map()
 tecnologias.set('react', { framework: false })
-tecnologias.set('angular', { framwork: true })
+tecnologias.set('angular', { framework: true })
 
 console.log(tecnologias.react);
 console.log(tecnologias.get('react').framework);
@@ -10,14 +8,20 @@ console.log(tecnologias.get('react').framework);
 const chavesVariadas = new Map([
     [function () { }, 'Função'],
     [{}, 'Objeto'],
-    [123, 'Número']
+    [123, 'Numero'],
 ])
 
-console.log(chavesVariadas.has(123))
-chavesVariadas.delete(123)
-console.log(chavesVariadas.has(123))
-console.log(chavesVariadas.size)
+chavesVariadas.forEach((vl, ch) => {
+    console.log(ch, vl);
+})
 
-chavesVariadas.set(123, 'Número')
-chavesVariadas.set(123, 'Número 2')
-console.log(chavesVariadas)
+console.log(chavesVariadas.has(123));
+chavesVariadas.delete(123)
+console.log(chavesVariadas.has(123));
+
+console.log(chavesVariadas.size);
+
+chavesVariadas.set(123, 'a')
+chavesVariadas.set(123, 'b') // sobrescreveu
+chavesVariadas.set(456, 'b')
+console.log(chavesVariadas);

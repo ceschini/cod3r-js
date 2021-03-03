@@ -1,16 +1,15 @@
-for (let letra of "Cod3r") {
-    console.log(letra)
+for (let letra of 'Cod3r') {
+    console.log(letra);
 }
 
 const assuntosEcma = ['Map', 'Set', 'Promise']
 
-// for in percorre em cima de indice
 for (let i in assuntosEcma) {
-    console.log(i)
+    console.log(i);
 }
-// for of percorre em cima do elemento
+
 for (let assunto of assuntosEcma) {
-    console.log(assunto)
+    console.log(assunto);
 }
 
 const assuntosMap = new Map([
@@ -20,22 +19,22 @@ const assuntosMap = new Map([
 ])
 
 for (let assunto of assuntosMap) {
-    console.log(assunto)
+    console.log(assunto);
 }
 
 for (let chave of assuntosMap.keys()) {
-    console.log(chave)
+    console.log(chave);
 }
 
 for (let valor of assuntosMap.values()) {
-    console.log(valor)
+    console.log(valor);
 }
 
 for (let [ch, vl] of assuntosMap.entries()) {
-    console.log(ch, vl)
+    console.log(ch, vl);
 }
 
 const s = new Set(['a', 'b', 'c'])
 for (let letra of s) {
-    console.log(letra)
+    console.log(letra);
 }

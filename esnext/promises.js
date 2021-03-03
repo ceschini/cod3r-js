@@ -1,13 +1,14 @@
 function falarDepoisDe(segundos, frase) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve(frase)
+            resolve(frase) // aceita soh 1 param
         }, segundos * 1000)
     })
 }
 
-falarDepoisDe(3, 'Que Lecal')
-    .then(frase => frase.concat('?!?!'))
+falarDepoisDe(3, 'que lecau')
+    .then(frase => frase.concat('?!?'))
     .then(outraFrase => console.log(outraFrase))
-    .catch(e => console.log(e))
-console.log('1 2 3 e...')
+    .catch(e => console.log(e)) // pega erro da promise (reject)
+
+console.log('log depois da promise');
