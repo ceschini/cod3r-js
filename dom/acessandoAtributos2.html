@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Acessando Atributos #02</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        <label for="compras">Compras</label>
+        <ul id="compras" destino='escritório' data-urgencia="5">
+            <li>Café</li>
+            <li>Água</li>
+            <li>Copo Descartável</li>
+        </ul>
+    </div>
+    <script>
+        // div que tenha um filho ul com atributo destino = escritorio
+        const lista = document.querySelector('div ul[destino="escritório"]')
+        console.log('elemento "ul"....');
+        console.log('childNodes', lista.childNodes);
+        // destino eh personalizado, o browser ignora
+        console.log('destino', lista.destino);
+        console.log('getAttribute', lista.getAttribute('destino'));
+        console.log('hasAttribute', lista.hasAttribute('destino'));
+
+        lista.setAttribute('destino', 'empresa')
+        console.log('getAttribute', lista.getAttribute('destino'));
+
+        // adicionando novo atributo
+        lista.setAttribute('status', 'aberto')
+        console.log('getAttribute', lista.getAttribute('status'));
+
+        // deletando um atributo
+        lista.removeAttribute('destino')
+        console.log('getAttribute', lista.getAttribute('destino'));
+        // atributos que comecam com 'data-' sao tratados diferente
+
+        console.log(lista.dataset); // obj DOMStringMap
+        console.log(lista.dataset.urgencia);
+        lista.dataset.urgencia = 4
+        console.log(lista.getAttribute('data-urgencia'));
+
+        // cuidado
+        const label = document.querySelector('label')
+        console.log(label.for); // undefined, palavra reservada
+        console.log(label.htmlFor); // agr sim
+        console.log(label.getAttribute('for'));
+        console.log(label.getAttribute('htmlFor')); // null
+    </script>
+</body>
+
+</html>

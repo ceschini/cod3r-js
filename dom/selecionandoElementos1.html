@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #01</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="conteudo exercicio">
+    <div id="primeiro">#primeiro</div>
+    <div>Segundo</div>
+    <div class="terceiro ultimo">.terceiro .ultimo</div>
+    <script>              
+        // selecionando o primeiro elemento com id correspondente
+        document.getElementById('primeiro').classList.add('destaque')
+
+        // selecionando todos elementos com a tag div
+        const divs = document.getElementsByTagName('div') // HTMLCollection
+        
+        // transformando HTMLCollection para array
+        Array.from(divs).forEach(e => e.classList.remove('destaque'))
+        const divsArray = [...divs] // operador spread
+        divsArray.forEach(e => e.classList.add('destaque'))
+
+        // selecionando todos elementos com a classe ultimo
+        const ultimosElementos = document.getElementsByClassName('ultimo') //HTMLCollection
+        // HTMLCollection eh iterator entao pode usar esse for
+        for (let e of ultimosElementos) {
+            e.classList.remove('destaque')
+        }
+    </script>
+</body>
+</html>

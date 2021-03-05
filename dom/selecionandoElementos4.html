@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #04</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body class="conteudo exercicio">
+    <div>
+        <p>Início</p>
+    </div>
+    <div>
+        <ul>
+            <li>Pedro</li>
+            <li>Ana</li>
+            <li>Bia</li>
+        </ul>
+    </div>
+    <div>
+        <p>Fim</p>
+    </div>
+    <script>
+        // navegando a DOM
+        function log() { // nao da certo com arrow
+            console.log(this)
+        }
+
+        HTMLCollection.prototype.log = log
+        HTMLElement.prototype.log = log
+        NodeList.prototype.log = log
+        Node.prototype.log = log
+
+        const lista = document.querySelector('div ul')
+        lista.parentNode.log() // acessando pai (div) de um elemento (ul)
+        lista.childNodes.log() // NodeList com os filhos do ul
+
+        const primeiro = lista.firstChild // primeiro filho
+        primeiro.log()
+        primeiro.nextSibling.log() // proximo elemento (irmao)
+
+        const ultimo = lista.lastChild // ultimo filho
+        ultimo.log()
+        ultimo.previousSibling.log() // elemento anterior
+
+        lista.children.log() // HTMLCollection com todos os filhos
+        lista.firstElementChild.log() // primeiro elemento de fato, sem os espacos do html
+        lista.lastElementChild.log()
+        // irmao anterior do pai da lista (div inicio)
+        lista.parentNode.previousElementSibling.log()
+        // irmao proximo do pai da lista (div fim)
+        lista.parentNode.nextElementSibling.log()
+
+        // mais simples
+        // pega li que ta dentro da ul que ta dentro da div
+        // div(ul(li))
+        document.querySelectorAll('div ul li').log()
+    </script>
+</body>
+
+</html>
