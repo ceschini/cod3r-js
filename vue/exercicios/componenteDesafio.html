@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Componente</title>
+    <link rel="stylesheet" href="/css/estilo.css">
+    <script src="/js/vue.min.js"></script>
+</head>
+
+<body class="exercicio">
+    <div id="app">
+        <!-- cada contador tem seu proprio escopo -->
+        <contador></contador>
+        <contador></contador>
+        <contador></contador>
+    </div>
+    <script>
+        Vue.component('contador', {
+            // props passam para o template, 
+            // nao deve ser alterado dinamicamente
+            // cuidado para nao botar mesmo nome de algum dado
+            props: ['contador1'],
+            // pra isso serve o data, 
+            // eh a memoria do componente
+            data() {
+                return {
+                    contador: 0
+                }
+            },
+            methods: {
+                somaUm() {
+                    this.contador++
+                },
+                subtraiUm() {
+                    this.contador--
+                }
+            },
+            template: `
+                <div>
+                    <p>{{contador}}</p>
+                    <button @click="somaUm">+1</button>
+                    <button @click="subtraiUm">-1</button>
+                </div>
+            `
+        })
+
+        new Vue({
+            el: '#app'
+        })
+    </script>
+</body>
+
+</html>

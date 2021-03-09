@@ -1,15 +1,45 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Binding</title>
     <link rel="stylesheet" href="/css/estilo.css">
     <script src="/js/vue.min.js"></script>
 </head>
-<body class="exercicio">
 
+<body class="exercicio">
+    <div id="app">
+        <p>{{ link }}</p>
+        <p><a href="{{ link }}">Canal?</a></p>
+        <!-- diretivas = propriedades personalizadas (v-xxxx)
+            diretiva:propriedade=data 
+            "Vue, resolva a propriedade href"-->
+        <p><a v-bind:href="link">Canal</a></p>
+        <!-- v-bind reduzido -->
+        <p><a :href="link">Tbm Canal</a></p>
+        <p>
+            <!-- v-model 2-way binding (atualizacao duas vias) -->
+            <!-- input esta atualizando o dado 'nome'  -->
+            <input type="text" v-model="nome"><br>
+            <span>{{ nome }}</span>
+        </p>
+    </div>
     <script>
-        // ...
+        new Vue({
+            el: '#app',
+            data: {
+                link: "https://youtube.com/cod3rcursos",
+                nome: "Maria",
+            },
+            watch: {
+                // na mudanca do atributo chama a funcao de mesmo nome
+                nome(novoValor) {
+                    console.log(novoValor.toUpperCase())
+                }
+            }
+        })
     </script>
 </body>
+
 </html>

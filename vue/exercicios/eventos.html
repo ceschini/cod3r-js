@@ -1,15 +1,54 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Eventos</title>
     <link rel="stylesheet" href="/css/estilo.css">
     <script src="/js/vue.min.js"></script>
 </head>
-<body class="exercicio">
 
+<body class="exercicio">
+    <div id="app">
+        <p>{{ contador }}</p>
+        <p>
+            <!-- diretiva v-on linka um metodo a um evento -->
+            <button v-on:click="add">+1</button>
+            <!-- @ = abreviacao do v-on -->
+            <!-- alem de funcao da pra usar expressao -->
+            <button @click="contador -= 2">-2</button>
+        </p>
+        <p @mousemove="atualizarPosicao">
+            Coordenadas: {{x}} {{y}}
+            <!-- .stop = modificador de funcao -->
+            <!-- para de monitar evento mouse -->
+            <span @mousemove.stop>Aqui Não</span>
+        </p>
+        <!-- quando apertar tecla enter -->
+        <input type="text" @keyup.enter="alerta">
+    </div>
     <script>
-        // ...
+        new Vue({
+            el: '#app',
+            data: {
+                contador: 0,
+                x: 0,
+                y: 0,
+            },
+            methods: {
+                add() {
+                    this.contador++
+                },
+                atualizarPosicao(e) {
+                    this.x = e.clientX
+                    this.y = e.clientY
+                },
+                alerta() {
+                    alert('Enter!')
+                }
+            }
+        })
     </script>
 </body>
+
 </html>
