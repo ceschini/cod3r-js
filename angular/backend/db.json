@@ -12,8 +12,23 @@
     },
     {
       "id": 3,
-      "name": "Samsung S20+",
-      "price": 5000.89
+      "name": "Samsung S20+ Ultra",
+      "price": "7520.89"
+    },
+    {
+      "name": "Geladeira Electrolux Turbo",
+      "price": "1890.44",
+      "id": 5
+    },
+    {
+      "name": "Notebook Dell Inspiron 15000",
+      "price": "3467.87",
+      "id": 6
+    },
+    {
+      "name": "Lapis Preto FaberCastell",
+      "price": "4.00",
+      "id": 7
     }
   ]
 }
